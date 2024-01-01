@@ -11,12 +11,12 @@
                 <div class="card-body">
                     <form action="<?= base_url('Data_type_motor/upload'); ?>" method="POST">
                         <div class="form-group">
-                            <label for="nama_motor">Nama Motor</label>
-                            <input type="text" name="nama_motor" class="form-control" id="nama_motor" placeholder="Nama Motor">
+                            <label for="kategori_motor">Kategori motor</label>
+                            <input type="text" name="kategori_motor" class="form-control" id="kategori_motor" placeholder="kategori motor">
                         </div>
                         <div class="form-group">
-                            <label for="type_motor">Type Motor</label>
-                            <input type="text" name="type_motor" class="form-control" id="type_motor" placeholder="Type Motor">
+                            <label for="tarif">Tarif</label>
+                            <input type="text" name="tarif" class="form-control" id="tarif" placeholder="tarif">
                         </div>
                         <a href="<?= base_url('Data_karyawan') ?>" class="btn btn-danger">Tutup</a>
                         <button type="submit" name="tambah" class="btn btn-primary float-right">Tambah

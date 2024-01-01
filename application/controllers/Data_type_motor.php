@@ -31,10 +31,27 @@ class Data_type_motor extends CI_Controller
     }
     public function upload(){
         $data=[
-            'nama_motor' => $this->input->post('nama_motor'),
-            'type_motor' => $this->input->post('type_motor'),
+            'kategori_motor' => $this->input->post('kategori_motor'),
+            'tarif' => $this->input->post('tarif'),
         ];
         $this->Data_type_mtr_model->insert($data);
+        redirect('Data_type_motor');
+    }
+    public function edit($id)
+    {
+        $data['judul'] = "Edit Data Type Motor";
+        $data['datatypemotor'] = $this->Data_type_mtr_model->getById($id);
+        $this->load->view("layout/header", $data);
+        $this->load->view("datatypemotor/vw_ubah_typemotor", $data);
+        $this->load->view("layout/footer");
+    }
+    public function update(){
+        $data=[
+            'kategori_motor' => $this->input->post('kategori_motor'),
+            'tarif' => $this->input->post('tarif')
+        ];
+        $id = $this->input->post('id');
+        $this->Data_type_mtr_model->update(['id' => $id], $data);
         redirect('Data_type_motor');
     }
 }

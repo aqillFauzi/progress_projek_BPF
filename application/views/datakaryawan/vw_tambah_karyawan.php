@@ -12,7 +12,7 @@
                     <form action="<?= base_url('Data_karyawan/upload'); ?>" method="POST">
                         <div class="form-group">
                             <label for="Nama_karyawan">Nama</label>
-                            <input type="text" name="Nama_karyawan" class="form-control" id="Nama_karyawan" placeholder="Nama">
+                            <input type="text" value="<?= set_value('Nama_karyawan'); ?>" name="Nama_karyawan" class="form-control" id="Nama_karyawan" placeholder="Nama">
                             
                         </div>
                         <div class="form-group">
