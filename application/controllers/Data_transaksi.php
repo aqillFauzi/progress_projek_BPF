@@ -9,6 +9,11 @@ class Data_transaksi extends CI_Controller
         $this->load->model("Data_transaksi_model");
         $this->load->model("Data_karyawan_model");
         $this->load->model("Data_type_mtr_model");
+        $this->load->library('session');
+        
+        if (!$this->session->userdata('user_id')) {
+            redirect('Auth');
+        }
     }
 
     public function index()
@@ -74,16 +79,11 @@ class Data_transaksi extends CI_Controller
     // Calculate total penghasilan bersih
     $data['totalPenghasilanBersih'] = $this->Data_transaksi_model->pendapatanBersih($tanggal);
 
-    $data['judul'] = "Data Transaksi (Filter)";
+    $data['judul'] = "Laporan Transaksi";
     $this->load->view("layout/header");
     $this->load->view("datatransaksi/vw_data_transaksi", $data);
     $this->load->view("layout/footer");
 }
-
-
-
-
-
     public function countMotorByTanggal($tanggal)
     {
         $data['judul'] = "Data Transaksi";
@@ -116,8 +116,6 @@ class Data_transaksi extends CI_Controller
         $this->load->view("datatransaksi/vw_count_gaji", $data);
         $this->load->view("layout/footer");
     }
-
-
     public function upload()
     {
         $data = [

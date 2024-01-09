@@ -133,8 +133,7 @@ public function hitungGajiPerMotor($tanggal, $karyawanId)
     foreach ($kategoriMotor as $motor) {
         $kategori = $motor['kategori_motor'];
         $jumlahMotor = $motor['jumlah_motor'];
-
-        // Adjust the salary calculation based on the vehicle category
+        
         if ($kategori == 'Kecil') {
             $gajiPerMotor += $jumlahMotor * 6000;
         } elseif ($kategori == 'Sedang') {

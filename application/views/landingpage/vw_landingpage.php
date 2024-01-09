@@ -48,7 +48,7 @@
             margin-right: 20px;
         }
 
-        
+
 
         .btn {
             background-color: #008000;
@@ -108,9 +108,9 @@
                                     </div>
                                 </div>
                             </ul>
-                           
+
                             <div class="header_buttons">
-                                
+
                                 <button class="btn" onclick="location.href='<?= base_url('auth'); ?>'">Login</button>
                             </div>
                         </div>
@@ -170,26 +170,77 @@
     </div>
     <!-- about section end -->
 
-
-    <!-- newsletter section start -->
     <div class="newsletter_section">
         <div class="container">
             <div class="row">
-                <div class="col-md-6">
-                    <h1 class="newsletter_text">Informasi Lanjut</h1>
-                    <p class="tempor_text">Untuk mengetahui informasi lebih lanjut, silahkan hubungi kontak berikut.</p>
-                </div>
+                <div class="col-md-6 mx-auto">
+                    <h1 class="newsletter_text">Kritik dan Saran</h1>
+                    <?php if ($this->session->flashdata('kritik_success')) : ?>
+                        <div class="alert alert-success" role="alert">
+                            <?= $this->session->flashdata('kritik_success'); ?>
+                        </div>
+                    <?php endif; ?>
+                    <!-- Form Kritik dan Saran -->
+                    <form action="<?= base_url('kritik/tambahKritikSaran'); ?>" method="post">
+                        <div class="mb-3">
+                            <label for="nama" class="form-label">Nama</label>
+                            <input type="text" class="form-control" id="nama" name="nama" required>
+                        </div>
 
+                        <div class="mb-3">
+                            <label for="pesan" class="form-label">Pesan</label>
+                            <input type="text" class="form-control" id="pesan" name="pesan" required>
+                        </div>
+                        <br>
+                        <div class="mb-5">
+                            <label for="kebersihan" class="form-label">Kebersihan</label>
+                            <select class="form-select" id="kebersihan" name="kebersihan" required>
+                                <option value="" disabled selected>Pilih nilai (1-5)</option>
+                                <?php for ($i = 1; $i <= 5; $i++) : ?>
+                                    <option value="<?= $i; ?>"><?= $i; ?></option>
+                                <?php endfor; ?>
+                            </select>
+                        </div><br>
+
+                        <div class="mb-5">
+                            <label for="ketelitian" class="form-label">Ketelitian</label>
+                            <select class="form-select" id="ketelitian" name="ketelitian" required>
+                                <option value="" disabled selected>Pilih nilai (1-5)</option>
+                                <?php for ($i = 1; $i <= 5; $i++) : ?>
+                                    <option value="<?= $i; ?>"><?= $i; ?></option>
+                                <?php endfor; ?>
+                            </select>
+                        </div>
+                        <br>
+                        <div class="mb-5">
+                            <label for="keramahan" class="form-label">Keramahan</label>
+                            <select class="form-select" id="keramahan" name="keramahan" required>
+                                <option value="" disabled selected>Pilih nilai (1-5)</option>
+                                <?php for ($i = 1; $i <= 5; $i++) : ?>
+                                    <option value="<?= $i; ?>"><?= $i; ?></option>
+                                <?php endfor; ?>
+                            </select>
+                        </div>
+
+                        <div class="mb-3">
+                            <button type="submit" class="btn btn-primary">Kirim</button>
+                        </div>
+                    </form>
+                </div>
             </div>
         </div>
     </div>
-    <!-- newsletter section end -->
+
+
     <!-- footer section start -->
     <div class="footer_section layout_padding">
         <div class="container">
             <div class="footer_main">
                 <div id="informasi-kontak">
                     <div class="footer_left">
+                        <div class="col-md-6">
+
+                        </div>
                         <h1 class="contact_taital"><span>Contact </span><span>Us</span></h1>
                     </div>
                     <div class="footer_left">

@@ -74,6 +74,7 @@
                     <a href="<?= site_url('Data_transaksi/') ?>" class="nav-item nav-link <?= ($this->uri->segment(1) == 'Data_transaksi') ? 'active' : ''; ?>"><i class="fa-solid fa-business-time"></i>Transaksi</a>
                     <a href="<?= site_url('Data_type_motor/') ?>" class="nav-item nav-link <?= ($this->uri->segment(1) == 'Data_type_motor') ? 'active' : ''; ?>"><i class="fa-solid fa-motorcycle"></i>Type Motor</a>
                     <a href="<?= site_url('Data_user/') ?>" class="nav-item nav-link <?= ($this->uri->segment(1) == 'Data_user') ? 'active' : ''; ?>"><i class="fa-solid fa-users"></i>Data Admin</a>
+                    <a href="<?= site_url('Kritik/') ?>" class="nav-item nav-link <?= ($this->uri->segment(1) == 'Kritik') ? 'active' : ''; ?>"><i class="bi bi-archive-fill"></i>Kritik Pelanggan</a>
                 </div>
             </nav>
         </div>

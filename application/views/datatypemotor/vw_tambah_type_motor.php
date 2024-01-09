@@ -18,7 +18,7 @@
                             <label for="tarif">Tarif</label>
                             <input type="text" name="tarif" class="form-control" id="tarif" placeholder="tarif">
                         </div>
-                        <a href="<?= base_url('Data_karyawan') ?>" class="btn btn-danger">Tutup</a>
+                        <a href="<?= base_url('Data_type_motor') ?>" class="btn btn-danger">Tutup</a>
                         <button type="submit" name="tambah" class="btn btn-primary float-right">Tambah
                             Type Motor</button>
                     </form>

@@ -25,7 +25,7 @@
                         <div class="col-md-4">Type Motor</div>
                         <div class="col-md-2">:</div>
                         <div class="col-md-6">
-                            <?= $datatransaksi['type_motor']; ?>
+                            <?= $datatransaksi['kategori_motor']; ?>
                         </div>
                     </div>
                     <div class="row">
@@ -39,7 +39,7 @@
                         <div class="col-md-4">Karyawan</div>
                         <div class="col-md-2">:</div>
                         <div class="col-md-6">
-                            <?= $datatransaksi['karyawan']; ?>
+                            <?= $datatransaksi['Nama_karyawan']; ?>
                         </div>
                     </div>
                 </div>

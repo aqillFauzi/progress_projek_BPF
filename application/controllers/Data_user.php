@@ -8,6 +8,11 @@ class Data_user extends CI_Controller
     {
         parent::__construct();
         $this->load->model("Data_user_model");
+        $this->load->library('session');
+        // Check if user is not logged in, then redirect to the login page
+        if (!$this->session->userdata('user_id')) {
+            redirect('Auth');
+        }
     }
     public function index()
     {
